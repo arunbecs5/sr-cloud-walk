@@ -1,0 +1,4 @@
+runtime: nodejs18  # Specify the correct Node.js version
+handlers:
+  - url: /.*
+    script: auto

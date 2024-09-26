@@ -4,7 +4,13 @@ const cors = require('cors');
 const db = require('./db');
 
 const app = express();
-app.use(cors());
+const corsOptions = {
+    origin: '*', // Allow all origins
+    methods: 'GET,POST,PUT,DELETE', // Allowed HTTP methods
+    allowedHeaders: 'Content-Type,Authorization', // Allowed headers
+    credentials: true, // Allow credentials if needed
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.get('/users', (req, res) => {
