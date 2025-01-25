@@ -1,47 +1,44 @@
-// src/App.js
-import React from 'react';
-// import axios from 'axios';
-
 import Menubar from './components/Menubar';
 import HomeComponent from './components/Home';
+import React, { useState } from 'react';
+import ServiceComponent from './components/Service';
+import AboutComponent from './components/About';
+import QuotesComponent from './components/Quotes';
+import ContactUsComponent from './components/Contacts';
+import ProjectComponent from './components/Projects';
+
 
 const App = () => {
-    // const [users, setUsers] = useState([]);
-    // const [name, setName] = useState('');
-
-    // useEffect(() => {
-    //     const fetchUsers = async () => {
-    //         const response = await axios.get('http://localhost:5000/users');
-    //         setUsers(response.data.users);
-    //     };
-    //     fetchUsers();
-    // }, []);
-
-    // const addUser = async () => {
-    //     const response = await axios.post('http://localhost:5000/users', { name });
-    //     setUsers([...users, response.data]);
-    //     setName('');
-    // };
+    // Set up state to track which section is visible
+    const [activeSection, setActiveSection] = useState("home");
+    // Function to handle menu item click
+    const handleMenuClick = (section) => {
+        setActiveSection(section);
+    };
 
     return (
-        // <div>
-        //     <h1>Users</h1>
-        //     <ul>
-        //         {users.map(user => (
-        //             <li key={user.id}>{user.name}</li>
-        //         ))}
-        //     </ul>
-        //     <input 
-        //         type="text" 
-        //         value={name} 
-        //         onChange={(e) => setName(e.target.value)} 
-        //         placeholder="Add a new user" 
-        //     />
-        //     <button onClick={addUser}>Add User</button>
-        // </div>
         <>
-            <Menubar />
-            <HomeComponent />
+            <Menubar handleMenuClick={handleMenuClick}/>            
+            {activeSection === 'home' && <HomeComponent />}
+            {activeSection === 'quote' && <QuotesComponent />}
+            {activeSection === 'service' && <ServiceComponent />}
+            {activeSection === 'about' && <AboutComponent />}    
+            {activeSection === 'contact' && <ContactUsComponent />}    
+            {activeSection === 'project' && <ProjectComponent />}    
+
+            {/* <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a href="#">SR Cloud Walk</a>, All Right Reserved.
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            Designed By <a href="#">SR_CloudWalk_Team</a><br />
+                            Distributed By: <a href="#" target="_blank">SR_CloudWalk</a>
+                        </div>
+                    </div>
+                </div>
+            </div>         */}
         </>
 
     );
