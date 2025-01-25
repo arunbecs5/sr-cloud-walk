@@ -1,14 +1,9 @@
 import React from 'react';
 
-const Menubar = () => {
+const Menubar = ({ handleMenuClick }) => {
+
     return (
         <>
-            {/* <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-                <div class="spinner-border text-primary" style={{ "width" : "3rem", "height": "3rem" }} role="status">
-                    <span class="sr-only">Loading...</span>
-                </div>
-            </div> */}
-
             <div class="container-fluid bg-dark p-0">
                 <div class="row gx-0 d-none d-lg-flex">
                     <div class="col-lg-7 px-5 text-start">
@@ -45,11 +40,12 @@ const Menubar = () => {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto p-4 p-lg-0">
-                        <a href="#" class="nav-item nav-link active">Home</a>
-                        <a href="#" class="nav-item nav-link">About</a>
-                        <a href="#" class="nav-item nav-link">Service</a>
-                        <a href="#" class="nav-item nav-link">Project</a>
-                        <div class="nav-item dropdown">
+                        <li class="btn nav-item nav-link" onClick={()=> handleMenuClick("home")}>Home</li>
+                        <li class="btn nav-item nav-link" onClick={()=> handleMenuClick("about")}>About</li>
+                        <li class="btn nav-item nav-link" onClick={()=> handleMenuClick("service")}>Service</li>
+                        <li class="btn nav-item nav-link" onClick={()=> handleMenuClick("project")}>Project</li>
+                        <li class="btn nav-item nav-link" onClick={()=> handleMenuClick("contact")}>Contact</li>
+                        {/* <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu bg-light m-0">
                                 <a href="#" class="dropdown-item">Feature</a>
@@ -58,10 +54,11 @@ const Menubar = () => {
                                 <a href="#" class="dropdown-item">Testimonial</a>
                                 <a href="#" class="dropdown-item">404 Page</a>
                             </div>
-                        </div>
-                        <a href="#" class="nav-item nav-link">Contact</a>
+                        </div> */}
                     </div>
-                    <a href="" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Get A Quote<i class="fa fa-arrow-right ms-3"></i></a>
+                    <button class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block" 
+                        onClick={()=> handleMenuClick("quote")}>Get A Quote<i class="fa fa-arrow-right ms-3"></i>
+                    </button>
                 </div>
             </nav>
         </>
