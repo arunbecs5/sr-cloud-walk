@@ -10,7 +10,7 @@ const AboutComponent = () => {
                     <div class="row g-0 mx-lg-0">
                         <div class="col-lg-6 ps-lg-0 wow fadeIn" data-wow-delay="0.1s" style={{ minHeight: "400px" }}>
                             <div class="position-relative h-100">
-                                <img class="position-absolute img-fluid w-100 h-100" src="img/about2.jpg" style={{ objectFit: "cover" }} alt="" />
+                                <img class="position-absolute img-fluid w-100 h-100" src="img/about3.jpg" style={{ objectFit: "cover" }} alt="" />
                             </div>
                         </div>
                         <div class="col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s">
