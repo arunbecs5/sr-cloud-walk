@@ -1,6 +1,95 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+const projects = [
+    {
+        id: 1, category: 'Ground Mount', title: '5MW',
+        description: 'Ground mounting project @ Aruppukottai.',
+        imageUrl: 'img/projects/ground/5mw.jpg',
+    },
+    {
+        id: 1, category: 'Industrials', title: '1MW',
+        description: 'Rooftop project at STRONG GLASS (P) Ltd, COIMBATORE.',
+        imageUrl: 'img/projects/industrial/1mw.jpg',
+    },
+    {
+        id: 1, category: 'Industrials', title: '200KW',
+        description: 'Roofing work for 200kw @ Dharapuram',
+        imageUrl: 'img/projects/industrial/200kw1.jpeg',
+    },
+    {
+        id: 1, category: 'Industrials', title: '100KW',
+        description: 'Roofing work @ Coimbatore',
+        imageUrl: 'img/projects/industrial/100kw.jpg',
+    },
+    {
+        id: 1, category: 'Industrials', title: '40kw',
+        description: 'Roofing work @ Pongalur',
+        imageUrl: 'img/projects/industrial/40kw-pongalur.jpg',
+    },    
+    {
+        id: 1, category: 'Residential', title: '10KW',
+        description: 'Residential project with On Grid system @ Coimbatore',
+        imageUrl: 'img/projects/R_Work/10kw.jpeg',
+    },
+    {
+        id: 1, category: 'Residential', title: '5KW',
+        description: 'Residential project @ Palladam',
+        imageUrl: 'img/projects/R_Work/5kw-1.jpeg',
+    }, 
+    {
+        id: 1, category: 'Residential', title: '5KW',
+        description: 'Residential project @ Vilankurichi, Coimbatore',
+        imageUrl: 'img/projects/R_Work/5kw.jpeg',
+    },   
+    {
+        id: 1, category: 'Residential', title: '2KW',
+        description: 'Residential project @ Pollachi',
+        imageUrl: 'img/projects/R_Work/2kw.jpg',
+    }, 
+    {
+        id: 1, category: 'Pumping System', title: '10HP',
+        description: 'Pumping system @ Pollachi Farm House.',
+        videoUrl: 'img/projects/pumping/pumping.mp4',
+    },
+];
+
+// Tab filter component
+const TabFilter = ({ categories, selectedCategory, onTabClick }) => {
+    return (
+        <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="col-12 text-center">
+                <ul class="list-inline mb-5" id="portfolio-flters">
+                    {
+                        categories.map((category, index) => (
+                            <li className={`tab ${selectedCategory === category ? 'active' : ''}`}
+                                onClick={() => onTabClick(category)}
+                                key={index}>{category}
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+        </div>
+    );
+};
 
 const ProjectComponent = () => {
+    // State to keep track of selected category for filtering
+    const [selectedCategory, setSelectedCategory] = useState('All');
+
+    // Extract unique categories from the projects data
+    const categories = ['All', ...new Set(projects.map(project => project.category))];
+
+    // Filter projects based on selected category
+    const filteredProjects = selectedCategory === 'All'
+        ? projects
+        : projects.filter(project => project.category === selectedCategory);
+
+    const handleTabClick = (category) => {
+        setSelectedCategory(category);
+    };
+
+
     return (
         <>
             {/* <!-- Projects Start --> */}
@@ -8,102 +97,45 @@ const ProjectComponent = () => {
                 <div class="container">
                     <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style={{ maxWidth: "600px" }}>
                         <h6 class="text-primary">Our Projects</h6>
-                        <h1 class="mb-4">Visit Our Latest Solar And Renewable Energy Projects</h1>
+                        <h1 class="mb-4">Visit Our Solar And Renewable Energy Projects</h1>
                     </div>
-                    <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="col-12 text-center">
-                            <ul class="list-inline mb-5" id="portfolio-flters">
-                                <li class="mx-2 active" data-filter="*">All</li>
-                                <li class="mx-2" data-filter=".first">Solar Panels</li>
-                                <li class="mx-2" data-filter=".second">Wind Turbines</li>
-                                <li class="mx-2" data-filter=".third">Hydropower Plants</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="row g-4 portfolio-container wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="col-lg-4 col-md-6 portfolio-item first">
-                            <div class="portfolio-img rounded overflow-hidden">
-                                <img class="img-fluid" src="img/img-600x400-6.jpg" alt=""/>
-                                    <div class="portfolio-btn">
-                                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="img/img-600x400-6.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
+                    <div className="gallery-container">
+                        {/* Tab filter component */}
+                        <TabFilter categories={categories} selectedCategory={selectedCategory} onTabClick={handleTabClick} />
+
+                        {/* Display filtered projects */}
+                        <div class="row g-4 portfolio-container wow fadeInUp" data-wow-delay="0.5s">
+                            {filteredProjects.map(project => (
+                                <div key={project.id} className="gallery-item col-lg-4 col-md-6 portfolio-item first">
+                                    {project.videoUrl ? (
+                                        selectedCategory == 'Pumping System' ? (
+                                            <video width="100%" height="auto" controls autoPlay>
+                                                <source src={project.videoUrl} type="video/mp4" />
+                                                Your browser does not support the video tag.
+                                            </video>
+                                        ) :
+                                            (
+                                                <video width="100%" height="auto" controls>
+                                                    <source src={project.videoUrl} type="video/mp4" />
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                            )
+
+                                    ) : (
+                                        <img class="img-fluid" src={project.imageUrl} alt={project.title} />
+                                    )}
+
+                                    <div className="overlay">
+                                        <h3>{project.title}</h3>
                                     </div>
-                            </div>
-                            <div class="pt-3">
-                                <p class="text-primary mb-0">Solar Panels</p>
-                                <hr class="text-primary w-25 my-2"/>
-                                    <h5 class="lh-base">We Are pioneers of solar & renewable energy industry</h5>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 portfolio-item second">
-                            <div class="portfolio-img rounded overflow-hidden">
-                                <img class="img-fluid" src="img/img-600x400-5.jpg" alt=""/>
-                                    <div class="portfolio-btn">
-                                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="img/img-600x400-5.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
+                                    <div class="pt-3">
+                                        <p class="text-primary mb-0">{project.title}</p>
+                                        <hr class="text-primary w-25 my-2" />
+                                        <h5 class="lh-base">{project.description}</h5>
                                     </div>
-                            </div>
-                            <div class="pt-3">
-                                <p class="text-primary mb-0">Wind Turbines</p>
-                                <hr class="text-primary w-25 my-2"/>
-                                    <h5 class="lh-base">We Are pioneers of solar & renewable energy industry</h5>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 portfolio-item third">
-                            <div class="portfolio-img rounded overflow-hidden">
-                                <img class="img-fluid" src="img/img-600x400-4.jpg" alt=""/>
-                                    <div class="portfolio-btn">
-                                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="img/img-600x400-4.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
-                                    </div>
-                            </div>
-                            <div class="pt-3">
-                                <p class="text-primary mb-0">Hydropower Plants</p>
-                                <hr class="text-primary w-25 my-2"/>
-                                    <h5 class="lh-base">We Are pioneers of solar & renewable energy industry</h5>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 portfolio-item first">
-                            <div class="portfolio-img rounded overflow-hidden">
-                                <img class="img-fluid" src="img/img-600x400-3.jpg" alt=""/>
-                                    <div class="portfolio-btn">
-                                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="img/img-600x400-3.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
-                                    </div>
-                            </div>
-                            <div class="pt-3">
-                                <p class="text-primary mb-0">Solar Panels</p>
-                                <hr class="text-primary w-25 my-2"/>
-                                    <h5 class="lh-base">We Are pioneers of solar & renewable energy industry</h5>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 portfolio-item second">
-                            <div class="portfolio-img rounded overflow-hidden">
-                                <img class="img-fluid" src="img/img-600x400-2.jpg" alt=""/>
-                                    <div class="portfolio-btn">
-                                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="img/img-600x400-2.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
-                                    </div>
-                            </div>
-                            <div class="pt-3">
-                                <p class="text-primary mb-0">Wind Turbines</p>
-                                <hr class="text-primary w-25 my-2"/>
-                                    <h5 class="lh-base">We Are pioneers of solar & renewable energy industry</h5>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 portfolio-item third">
-                            <div class="portfolio-img rounded overflow-hidden">
-                                <img class="img-fluid" src="img/img-600x400-1.jpg" alt=""/>
-                                    <div class="portfolio-btn">
-                                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="img/img-600x400-1.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
-                                    </div>
-                            </div>
-                            <div class="pt-3">
-                                <p class="text-primary mb-0">Hydropower Plants</p>
-                                <hr class="text-primary w-25 my-2"/>
-                                <h5 class="lh-base">We Are pioneers of solar & renewable energy industry</h5>
-                            </div>
+                                </div>
+
+                            ))}
                         </div>
                     </div>
                 </div>

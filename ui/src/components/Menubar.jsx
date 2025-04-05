@@ -32,8 +32,9 @@ const Menubar = ({ handleMenuClick }) => {
             </div>
 
             <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+                <img class="" src="img/logo.jfif" style={{ height:"70px", fontFamily: "Open Sans" }} />
                 <a href="#" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
-                    <h2 class="m-0 text-primary">SunSolarTechnologies</h2>
+                    <h2 class="m-0 text-primary">Sun Solar Technologies</h2>
                 </a>
                 <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
@@ -41,10 +42,10 @@ const Menubar = ({ handleMenuClick }) => {
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto p-4 p-lg-0">
                         <li class="btn nav-item nav-link" onClick={()=> handleMenuClick("home")}>Home</li>
-                        <li class="btn nav-item nav-link" onClick={()=> handleMenuClick("about")}>About</li>
-                        <li class="btn nav-item nav-link" onClick={()=> handleMenuClick("service")}>Service</li>
-                        <li class="btn nav-item nav-link" onClick={()=> handleMenuClick("project")}>Project</li>
-                        <li class="btn nav-item nav-link" onClick={()=> handleMenuClick("contact")}>Contact</li>
+                        <li class="btn nav-item nav-link" onClick={()=> handleMenuClick("about")}>About us</li>
+                        <li class="btn nav-item nav-link" onClick={()=> handleMenuClick("project")}>Projects</li>
+                        <li class="btn nav-item nav-link" onClick={()=> handleMenuClick("service")}>Services</li>
+                        <li class="btn nav-item nav-link" onClick={()=> handleMenuClick("contact")}>Contact us</li>
                         {/* <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu bg-light m-0">
@@ -56,9 +57,9 @@ const Menubar = ({ handleMenuClick }) => {
                             </div>
                         </div> */}
                     </div>
-                    <button class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block" 
+                    {/* <button class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block" 
                         onClick={()=> handleMenuClick("quote")}>Get A Quote<i class="fa fa-arrow-right ms-3"></i>
-                    </button>
+                    </button> */}
                 </div>
             </nav>
         </>

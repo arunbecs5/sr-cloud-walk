@@ -203,6 +203,9 @@ const ServiceComponent = () => {
                         </div>
                     </div>
                 </div>
+                {/* <div>
+                    <img src="img/carousel-10.jpeg" alt="Government Subsidary Process" />
+                </div>   */}
             </div>
             {/* <!-- Service End --> */}
         </>

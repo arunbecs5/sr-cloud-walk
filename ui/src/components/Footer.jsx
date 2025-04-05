@@ -11,7 +11,7 @@ const FooterComponent = () => {
                             <h5 class="text-white mb-4">Address</h5>
                             <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>No. 2/4, Palakkad Road, Pollachi, Coimbatore - 642002</p>
                             <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 850 80937660</p>
-                            <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                            <p class="mb-2"><i class="fa fa-envelope me-3"></i>sunsolartechnologies@gmail.com</p>
                             <div class="d-flex pt-2">
                                 <a class="btn btn-square btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-square btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
@@ -20,6 +20,9 @@ const FooterComponent = () => {
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6">
+                            <img src='img/office-location.png' alt="map location"  style={{ height:"50%" }}/>
+                        </div>
+                        {/* <div class="col-lg-3 col-md-6">
                             <h5 class="text-white mb-4">Quick Links</h5>
                             <a class="btn btn-link" href="">About Us</a>
                             <a class="btn btn-link" href="">Contact Us</a>
@@ -57,7 +60,7 @@ const FooterComponent = () => {
                                 <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email" />
                                 <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 <div class="container">

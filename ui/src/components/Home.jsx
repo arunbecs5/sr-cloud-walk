@@ -9,18 +9,13 @@ import TestimoonialComponent from './Testimonial';
 import TeamsComponent from './Teams';
 import FeatureComponent from './Feature';
 import HomeFeatureComponent from './HomeFeature';
+import CarouselComponent from './Carousel';
 
 const HomeComponent = () => {
-    const images = [
-        { 'img_src' : "img/carousel-1.jpg" , "image_title" : "Plant Construction", "image_desc" : "Plant Work" }, // Add your image paths here
-        { 'img_src' : "img/carousel-2.jpg" , "image_title" : "Rooftop Installation", "image_desc" : "Rooftop Work" },
-        { 'img_src' : "img/carousel-6.jpg" , "image_title" : "Industrial Plan", "image_desc" : "Industrial Work" },
-        { 'img_src' : "img/carousel-7.jpg" , "image_title" : "Subsidary Process", "image_desc" : "Subsidary Work" },
-    ];
-    
     return (
         <>
-            <div className="carousel-container">
+            <CarouselComponent />
+            {/* <div className="carousel-container">
                 <Carousel>
                     {images.map((image, index) => (
                         <Carousel.Item key={index}>
@@ -36,8 +31,11 @@ const HomeComponent = () => {
                         </Carousel.Item>
                     ))}
                 </Carousel>
-            </div>
-            
+            </div> */}
+
+
+
+
             {/* <div class="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
                 <div class="owl-carousel header-carousel position-relative">
                     <div class="owl-carousel-item position-relative" data-dot="<img src='img/carousel-1.jpg'>">
@@ -73,49 +71,47 @@ const HomeComponent = () => {
             {/* <!-- Carousel End --> */}
 
 
-            {/* <!-- Feature Start --> */}
-            <HomeFeatureComponent/>
-            {/* <!-- Feature Start --> */}
-
-
             {/* <!-- About Start --> */}
             <AboutComponent />
             {/* <!-- About End --> */}
 
-           
+            {/* <!-- Feature Start --> */}
+            <HomeFeatureComponent />
+            {/* <!-- Feature Start --> */}
+
 
             {/* <!-- Feature Start --> */}
-            <FeatureComponent/>
+            <FeatureComponent />
             {/* <!-- Feature End --> */}
 
 
             {/* <!-- Projects Start --> */}
-            <ProjectComponent/>
+            <ProjectComponent />
             {/* <!-- Projects End --> */}
 
 
             {/* <!-- Quote Start --> */}
-            <QuotesComponent/>
+            {/* <QuotesComponent /> */}
             {/* <!-- Quote End --> */}
 
             {/* <!-- Service Start --> */}
-            <ServiceComponent/>
+            <ServiceComponent />
             {/* <!-- Service End --> */}
 
 
 
             {/* <!-- Team Start --> */}
-            <TeamsComponent/>
+            {/* <TeamsComponent /> */}
             {/* <!-- Team End --> */}
 
 
             {/* <!-- Testimonial Start --> */}
-            <TestimoonialComponent/>
+            {/* <TestimoonialComponent /> */}
             {/* <!-- Testimonial End --> */}
 
 
             {/* <!-- Footer Start --> */}
-            <FooterComponent/>
+            <FooterComponent />
             {/* <!-- Footer End --> */}
 
 
