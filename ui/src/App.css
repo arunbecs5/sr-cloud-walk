@@ -36,3 +36,100 @@
     transform: rotate(360deg);
   }
 }
+.text-primary {
+  color: #FF6F00 !important;
+}
+h2.text-primary{
+  font-family: 'Open Sans';
+}
+/* Styling for Carousel */
+.carousel-container {
+  width: 100%;
+  margin: 0 auto;
+  /* padding: 20px 0; */
+}
+
+.slick-slide img {
+  width: 100%;
+  height: 600px;  /* Set a fixed height for the images */
+  /* object-fit: contain;   */
+}
+/* ProjectGallery.css */
+
+/* Style for the tabs */
+.tab-container {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* .tab:hover {
+  background-color: #ddd;
+}
+
+.tab.active {
+  color: white;
+} */
+
+/* Style for the gallery */
+.gallery-container {
+  padding: 20px;
+}
+
+.gallery-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.gallery-item img, .gallery-item video {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item:hover img, .gallery-item:hover video {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* .gallery-item:hover .overlay {
+  opacity: 1;
+} */
+
+h3 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+
+

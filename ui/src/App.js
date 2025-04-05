@@ -6,6 +6,11 @@ import AboutComponent from './components/About';
 import QuotesComponent from './components/Quotes';
 import ContactUsComponent from './components/Contacts';
 import ProjectComponent from './components/Projects';
+import './App.css';
+/* Slick Carousel Styles */
+import 'slick-carousel/slick/slick.css'; 
+import 'slick-carousel/slick/slick-theme.css';
+
 
 
 const App = () => {
