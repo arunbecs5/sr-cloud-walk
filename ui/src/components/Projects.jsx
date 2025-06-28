@@ -5,7 +5,7 @@ const projects = [
         id: 1, category: 'Ground Mount', title: '5MW',
         description: 'Ground mounting project @ Aruppukottai.',
         imageUrl: 'img/projects/ground/5mw.jpg',
-    },
+    },    
     {
         id: 2, category: 'Industrials', title: '1MW',
         description: 'Rooftop project at STRONG GLASS (P) Ltd, COIMBATORE.',
@@ -51,6 +51,61 @@ const projects = [
         description: 'Pumping system @ Pollachi Farm House.',
         videoUrl: 'img/projects/pumping/pumping.mp4',
     },
+    {
+        id: 55, category: 'Ground Mount', title: '  ',
+        description: ' ',
+        imageUrl: 'img/projects/ground/1.jpg',
+    },
+    {
+        id: 56, category: 'Ground Mount', title: '  ',
+        description: ' ',
+        imageUrl: 'img/projects/ground/2.jpg',
+    },
+    {
+        id: 57, category: 'Residential', title: '  ',
+        description: ' ',
+        imageUrl: 'img/projects/ground/28.jpg',
+    },    
+    {
+        id: 58, category: 'Residential', title: ' ',
+        description: ' ',
+        imageUrl: 'img/projects/ground/29.jpg',
+    },
+    {
+        id: 59, category: 'Industrials', title: '',
+        description: ' ',
+        imageUrl: 'img/projects/ground/6.jpg',
+    },
+    {
+        id: 60, category: 'Ground Mount', title: ' ',
+        description: ' ',
+        imageUrl: 'img/projects/ground/7.jpg',
+    },
+    {
+        id: 61, category: 'Residential', title: '  ',
+        description: ' ',
+        imageUrl: 'img/projects/ground/8.jpg',
+    },
+    {
+        id: 62, category: 'Industrials', title: '  ',
+        description: ' ',
+        imageUrl: 'img/projects/ground/9.jpg',
+    },
+    {
+        id: 63, category: 'Industrials', title: '  ',
+        description: ' ',
+        imageUrl: 'img/projects/ground/10.jpg',
+    },
+    {
+        id: 64, category: 'Industrials', title: '  ',
+        description: ' ',
+        imageUrl: 'img/projects/ground/11.jpg',
+    },
+    {
+        id: 65, category: 'Industrials', title: '  ',
+        description: ' ',
+        imageUrl: 'img/projects/ground/12.jpg',
+    }
 ];
 
 // Tab filter component
