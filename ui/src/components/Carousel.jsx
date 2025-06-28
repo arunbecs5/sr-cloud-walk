@@ -16,8 +16,8 @@ const CarouselComponent = () => {
     const images = [
         // { 'img_src': "img/carousel-10.jpeg", "image_title": "Subsidary Process", "image_desc": "" },
         { 'img_src': "img/carousel-6.jpeg", "image_title": "Industrial Plan", "image_desc": "" },
-        { 'img_src': "img/carousel-1.jpg", "image_title": "Plant Construction", "image_desc": "" }, // Add your image paths here
-        { 'img_src': "img/carousel-2.jpg", "image_title": "Rooftop Installation", "image_desc": "" }
+        { 'img_src': "img/carousel-11.jpg", "image_title": "Plant Construction", "image_desc": "" }, // Add your image paths here
+        { 'img_src': "img/carousel-12.jpg", "image_title": "Rooftop Installation", "image_desc": "" }
     ];
 
     return (
